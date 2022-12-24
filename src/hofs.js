@@ -6,5 +6,7 @@ function myMap(fn) {
   return newArray;
 }
 
-module.exports = myMap;
+module.exports = {
+  myMap,
+};
 
