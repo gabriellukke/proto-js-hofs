@@ -24,9 +24,16 @@ function myReduce(fn, initialValue) {
   return accumulator;
 }
 
+function myForEach(fn) {
+  for (let i = 0; i < this.length; i++) {
+    fn(this[i]);
+  }
+}
+
 module.exports = {
   myMap,
   myFilter,
   myReduce,
+  myForEach,
 };
 

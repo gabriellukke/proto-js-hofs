@@ -2,6 +2,7 @@ const {
   myMap,
   myFilter,
   myReduce,
+  myForEach,
 } = require('./hofs');
 
 const array = [1, 2, 3, 4, 5];
@@ -24,4 +25,9 @@ console.log('my prototype filter', myPrototypeFilteredArray);
 Object.assign(Array.prototype, { myReduce });
 const myPrototypeReducedArray = array.myReduce((acc, n) => acc + n, 0);
 console.log('my prototype reduce', myPrototypeReducedArray);
+
+Object.assign(Array.prototype, { myForEach });
+const myPrototypeForEachArray = [];
+array.myForEach(n => myPrototypeForEachArray.push(n * 2));
+console.log('my prototype forEach', myPrototypeForEachArray);
 
