@@ -16,8 +16,17 @@ function myFilter(fn) {
   return newArray;
 }
 
+function myReduce(fn, initialValue) {
+  let accumulator = initialValue;
+  for (let i = 0; i < this.length; i++) {
+    accumulator = fn(accumulator, this[i]);
+  }
+  return accumulator;
+}
+
 module.exports = {
   myMap,
   myFilter,
+  myReduce,
 };
 

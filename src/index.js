@@ -1,4 +1,8 @@
-const { myMap, myFilter } = require('./hofs');
+const {
+  myMap,
+  myFilter,
+  myReduce,
+} = require('./hofs');
 
 const array = [1, 2, 3, 4, 5];
 
@@ -16,4 +20,8 @@ console.log('my prototype map', myPrototypeMappedArray);
 Object.assign(Array.prototype, { myFilter: myFilter });
 const myPrototypeFilteredArray = array.myFilter(n => n % 2 === 0);
 console.log('my prototype filter', myPrototypeFilteredArray);
+
+Object.assign(Array.prototype, { myReduce });
+const myPrototypeReducedArray = array.myReduce((acc, n) => acc + n, 0);
+console.log('my prototype reduce', myPrototypeReducedArray);
 
